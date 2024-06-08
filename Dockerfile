@@ -44,4 +44,4 @@ RUN bundle install
 
 # Set up cron job
 RUN whenever --update-crontab
-RUN update-rc.d cron.service enable
+RUN service cron restart
