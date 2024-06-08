@@ -32,12 +32,12 @@ RUN mkdir -p /etc/letsencrypt/$SSLDOMAIN
 WORKDIR /var/www
 RUN git clone https://github.com/ramontiveros/ldap-oauth2-provider.git
 WORKDIR ldap-oauth2-provider
-RUN git checkout 1e1ff65
 RUN touch log/sidekiq.log
 
 # Configure Rails
 RUN sed -i.bu "s/placeholderdomain/$SSLDOMAIN/g" config/puma.rb
 RUN rm -f tmp/pids/server.pid
+RUN git checkout 1e1ff65
 RUN bundle install
 
 # Set up cron job
