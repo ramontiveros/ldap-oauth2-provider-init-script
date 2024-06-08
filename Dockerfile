@@ -21,7 +21,7 @@ RUN make install
 WORKDIR /
 
 # Install gems
-RUN gem install bundler
+RUN gem install bundler -v 2.3.27
 RUN gem install foreman
 
 # Prepare SSL Cert Folder
