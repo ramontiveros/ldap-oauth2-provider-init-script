@@ -40,7 +40,7 @@ RUN rm -f tmp/pids/server.pid
 
 RUN git pull && git fetch && git checkout 8fc7c0c
 RUN bundle install
-RUN git pull && git fetch && git checkout 8fc7c0c
+#RUN git pull && git fetch && git checkout 8fc7c0c
 
 # Set up cron job
 RUN whenever --update-crontab
