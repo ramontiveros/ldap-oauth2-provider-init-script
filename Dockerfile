@@ -1,5 +1,5 @@
 # base image
-FROM debian:jessie
+FROM debian:buster
 MAINTAINER luke.schleicher@curatess.com
 
 # Update packages
