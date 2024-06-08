@@ -32,6 +32,7 @@ RUN mkdir -p /etc/letsencrypt/$SSLDOMAIN
 WORKDIR /var/www
 RUN git clone https://github.com/ramontiveros/ldap-oauth2-provider.git
 WORKDIR ldap-oauth2-provider
+RUN git checkout 1e1ff659cd0ed71fa21bcb4b8b1136427811d423
 RUN touch log/sidekiq.log
 
 # Configure Rails
