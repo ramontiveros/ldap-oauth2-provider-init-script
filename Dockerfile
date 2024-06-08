@@ -38,9 +38,10 @@ RUN touch log/sidekiq.log
 RUN sed -i.bu "s/placeholderdomain/$SSLDOMAIN/g" config/puma.rb
 RUN rm -f tmp/pids/server.pid
 
-#RUN git fetch
 #RUN git checkout 1dcb977
+RUN git fetch
 RUN git pull
+RUN git checkout 7ba58e8
 RUN bundle install
 
 # Set up cron job
