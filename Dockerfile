@@ -37,10 +37,11 @@ RUN touch log/sidekiq.log
 # Configure Rails
 RUN sed -i.bu "s/placeholderdomain/$SSLDOMAIN/g" config/puma.rb
 RUN rm -f tmp/pids/server.pid
-RUN git pull
+
 #RUN git fetch
 #RUN git checkout 1dcb977
 RUN bundle install
+RUN git pull
 
 # Set up cron job
 RUN whenever --update-crontab
